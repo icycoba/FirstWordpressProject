@@ -119,7 +119,7 @@
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Contact Section Form-->
-            <div class="row">
+            <!--<div class="row">
                 <div class="col-lg-8 mx-auto">
                     <form id="contactForm" name="sentMessage" novalidate="novalidate">
                         <div class="control-group">
@@ -163,7 +163,11 @@
                                 type="submit">Odeslat</button></div>
                     </form>
                 </div>
-            </div>
+            </div> -->
+            <?php
+            echo apply_shortcodes( '[contact-form-7 id="12" title="Kontaktní formulář 1"]' );
+            ?>
+            
         </div>
     </section>
     <!-- Portfolio Modals-->
