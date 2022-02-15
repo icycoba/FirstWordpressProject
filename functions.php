@@ -28,4 +28,14 @@ require_once locate_template('/functions/widgets.php');
 
 add_theme_support('post-thumbnails');
 add_theme_support('title-tag');
+add_theme_support('firstproject_header_text');
 
+// Simple regex taken from https://stackoverflow.com/a/69207369
+function sanitize_header_text($input){
+    return preg_replace('/\x00|<[^>]*>?/', '', $input);
+}
+
+function sanitize_header_logo($input){
+    $output = $input;
+    return $output;
+}
