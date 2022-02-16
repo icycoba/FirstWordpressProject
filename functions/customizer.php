@@ -92,163 +92,56 @@ function wp_customizer($wp_customize)
         'type' => 'textarea'
     ));
     
-    // Item 1 settings
-    $wp_customize->add_section('portfolio-section-item-1', array(
-        'title' => 'Položka 1',
-        'priority' => 12,
-        'description' => _('Úprava první položky v sekci portfolio.')
-    ));
-    
-    // Item 1 Title
-    $wp_customize->add_setting('portfolio-item-1-title-setting', array(
-        'default' => 'Projekt #1',
-        'sanitize_callback' => 'sanitize_header_text'
-    ));
+    // Optimized portfolio modals
+    for($itemNumber = 1; $itemNumber <= 6; $itemNumber++){
+        // Item Customization
+        $wp_customize->add_section('portfolio-section-item-' . $itemNumber, array(
+            'title' => 'Položka ' . $itemNumber,
+            'priority' => 11 + $itemNumber,
+            'description' => _('Úprava položky v sekci portfolio.')
+        ));
 
-    $wp_customize->add_control('portfolio-item-1-title-control', array(
-        'label' => 'Nadpis první položky',
-        'section' => 'portfolio-section-item-1',
-        'settings' => 'portfolio-item-1-title-setting',
-        'type' => 'textarea'
-    ));
+        // Item Title
+        $wp_customize->add_setting('portfolio-item-'. $itemNumber .'-title-setting', array(
+            'default' => 'Projekt #'.$itemNumber,
+            'sanitize_callback' => 'sanitize_header_text'
+        ));
 
-    // Item 1 Image
-    $wp_customize->add_setting('portfolio-item-1-image-setting', array(
-        'default' => get_template_directory_uri() . '/assets/img/portfolio/cabin.png',
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options'
-    ));
+        $wp_customize->add_control('portfolio-item-'. $itemNumber .'-title-control', array(
+            'label' => 'Nadpis položky',
+            'section' => 'portfolio-section-item-'.$itemNumber,
+            'settings' => 'portfolio-item-'. $itemNumber .'-title-setting',
+            'type' => 'textarea'
+        ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'portfolio-item-1-image-control', array(
-        'label' => 'Obrázek 1',
-        'section' => 'portfolio-section-item-1',
-        'settings' => 'portfolio-item-1-image-setting',
-        'width' => 900,
-        'height' => 650
-    )));
+        // Item Image
+        $wp_customize->add_setting('portfolio-item-'. $itemNumber .'-image-setting', array(
+            'default' => get_template_directory_uri() . portfolio_default_icon($itemNumber),
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options'
+        ));
 
-    // Item 1 Text
-    $wp_customize->add_setting('portfolio-item-1-text-setting', array(
-        'default' => 'Stručný nebo dlouhý popis položky.',
-        'sanitize_callback' => 'sanitize_header_text'
-    ));
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'portfolio-item-'. $itemNumber .'-image-control', array(
+            'label' => 'Obrázek '.$itemNumber,
+            'section' => 'portfolio-section-item-'.$itemNumber,
+            'settings' => 'portfolio-item-'. $itemNumber .'-image-setting',
+            'width' => 900,
+            'height' => 650
+        )));
 
-    $wp_customize->add_control('portfolio-item-1-text-control', array(
-        'label' => 'Popis první položky',
-        'section' => 'portfolio-section-item-1',
-        'settings' => 'portfolio-item-1-text-setting',
-        'type' => 'textarea'
-    ));
+        // Item Text
+        $wp_customize->add_setting('portfolio-item-'. $itemNumber .'-text-setting', array(
+            'default' => 'Stručný nebo dlouhý popis položky.',
+            'sanitize_callback' => 'sanitize_header_text'
+        ));
 
-    // Item 2 settings
-    $wp_customize->add_section('portfolio-section-item-2', array(
-        'title' => 'Položka 2',
-        'priority' => 13,
-        'description' => _('Úprava druhé položky v sekci portfolio.')
-    ));
-
-    // Item 2 Image
-    $wp_customize->add_setting('portfolio-item-2-image-setting', array(
-        'default' => get_template_directory_uri() . '/assets/img/portfolio/cake.png',
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options'
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'portfolio-item-2-image-control', array(
-        'label' => 'Obrázek 2',
-        'section' => 'portfolio-section-item-2',
-        'settings' => 'portfolio-item-2-image-setting',
-        'width' => 900,
-        'height' => 650
-    )));
-
-    // Item 3 settings
-    $wp_customize->add_section('portfolio-section-item-3', array(
-        'title' => 'Položka 3',
-        'priority' => 14,
-        'description' => _('Úprava třetí položky v sekci portfolio.')
-    ));
-
-    // Item 3 Image
-    $wp_customize->add_setting('portfolio-item-3-image-setting', array(
-        'default' => get_template_directory_uri() . '/assets/img/portfolio/circus.png',
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options'
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'portfolio-item-3-image-control', array(
-        'label' => 'Obrázek 3',
-        'section' => 'portfolio-section-item-3',
-        'settings' => 'portfolio-item-3-image-setting',
-        'width' => 900,
-        'height' => 650
-    )));
-
-    // Item 4 settings
-    $wp_customize->add_section('portfolio-section-item-4', array(
-        'title' => 'Položka 4',
-        'priority' => 15,
-        'description' => _('Úprava čtvrté položky v sekci portfolio.')
-    ));
-
-    // Item 4 Image
-    $wp_customize->add_setting('portfolio-item-4-image-setting', array(
-        'default' => get_template_directory_uri() . '/assets/img/portfolio/game.png',
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options'
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'portfolio-item-4-image-control', array(
-        'label' => 'Obrázek 4',
-        'section' => 'portfolio-section-item-4',
-        'settings' => 'portfolio-item-4-image-setting',
-        'width' => 900,
-        'height' => 650
-    )));
-
-    // Item 5 settings
-    $wp_customize->add_section('portfolio-section-item-5', array(
-        'title' => 'Položka 5',
-        'priority' => 16,
-        'description' => _('Úprava páté položky v sekci portfolio.')
-    ));
-
-    // Item 5 Image
-    $wp_customize->add_setting('portfolio-item-5-image-setting', array(
-        'default' => get_template_directory_uri() . '/assets/img/portfolio/safe.png',
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options'
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'portfolio-item-5-image-control', array(
-        'label' => 'Obrázek 5',
-        'section' => 'portfolio-section-item-5',
-        'settings' => 'portfolio-item-5-image-setting',
-        'width' => 900,
-        'height' => 650
-    )));
-
-    // Item 6 settings
-    $wp_customize->add_section('portfolio-section-item-6', array(
-        'title' => 'Položka 6',
-        'priority' => 17,
-        'description' => _('Úprava šesté položky v sekci portfolio.')
-    ));
-
-    // Item 6 Image
-    $wp_customize->add_setting('portfolio-item-6-image-setting', array(
-        'default' => get_template_directory_uri() . '/assets/img/portfolio/submarine.png',
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options'
-    ));
-
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'portfolio-item-6-image-control', array(
-        'label' => 'Obrázek 6',
-        'section' => 'portfolio-section-item-6',
-        'settings' => 'portfolio-item-6-image-setting',
-        'width' => 900,
-        'height' => 650
-    )));
+        $wp_customize->add_control('portfolio-item-'. $itemNumber .'-text-control', array(
+            'label' => 'Popis první položky',
+            'section' => 'portfolio-section-item-'.$itemNumber,
+            'settings' => 'portfolio-item-'. $itemNumber .'-text-setting',
+            'type' => 'textarea'
+        ));
+    }
 
     //
     // About section customization

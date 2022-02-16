@@ -44,3 +44,31 @@ function sanitize_portfolio_icon_count($input){
     $output = $input;
     return $output;
 }
+
+// Simple switch-case to determine which default icon is supposed to be used
+function portfolio_default_icon($itemNumber){
+    switch($itemNumber){
+        case 1:
+            $output = '/assets/img/portfolio/cabin.png';
+            break;
+        case 2:
+            $output = '/assets/img/portfolio/cake.png';
+            break;
+        case 3:
+            $output = '/assets/img/portfolio/circus.png';
+            break;
+        case 4:
+            $output = '/assets/img/portfolio/game.png';
+            break;
+        case 5:
+            $output = '/assets/img/portfolio/safe.png';
+            break;
+        case 6:
+            $output = '/assets/img/portfolio/submarine.png';
+            break;
+        default:
+            $output = '';
+            break;
+    }
+    return $output;
+}
