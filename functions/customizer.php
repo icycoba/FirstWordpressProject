@@ -76,7 +76,7 @@ function wp_customizer($wp_customize)
     $wp_customize->add_section('portfolio-section', array(
         'title' => 'Portfolio',
         'priority' => 11,
-        'description' => _('Úprava sekce portfolio.')
+        'description' => _('Úprava sekce "Portfolio".')
     ));
 
     // Title settings
@@ -136,7 +136,7 @@ function wp_customizer($wp_customize)
         ));
 
         $wp_customize->add_control('portfolio-item-'. $itemNumber .'-text-control', array(
-            'label' => 'Popis první položky',
+            'label' => 'Popis položky',
             'section' => 'portfolio-section-item-'.$itemNumber,
             'settings' => 'portfolio-item-'. $itemNumber .'-text-setting',
             'type' => 'textarea'
@@ -147,15 +147,21 @@ function wp_customizer($wp_customize)
     // About section customization
     //
     $wp_customize->add_section('about-section', array(
-
+        'title' => 'O nás',
+        'priority' => 18,
+        'description' => _('Úprava sekce "O nás".')
     ));
 
-    $wp_customize->add_setting('about-settings', array(
-
+    $wp_customize->add_setting('about-text-setting', array(
+        'default' => 'Stručný nebo dlouhý popis služby/webové stránky.',
+        'sanitize_callback' => 'sanitize_header_text'
     ));
 
-    $wp_customize->add_control('about-control', array(
-
+    $wp_customize->add_control('about-text-control', array(
+        'label' => 'Popis služby/webové stránky',
+        'section' => 'about-section',
+        'settings' => 'about-text-setting',
+        'type' => 'textarea'
     ));
 
     //
