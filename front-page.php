@@ -99,11 +99,7 @@
             <div class="row">
                 <div class="col-lg-12 ml-auto">
                     <p class="lead text-center">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras pede libero, dapibus nec, pretium
-                        sit amet, tempor quis. Vivamus porttitor turpis ac leo. In laoreet, magna id viverra tincidunt,
-                        sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Proin in tellus sit amet nibh
-                        dignissim sagittis. Pellentesque sapien. Pellentesque arcu. Cum sociis natoque penatibus et
-                        magnis dis parturient montes, nascetur ridiculus mus.
+                        <?php echo nl2br(get_theme_mod('about-text-setting', 'Stručný nebo dlouhý popis služby/webové stránky.'));?>
                     </p>
                 </div>
             </div>
