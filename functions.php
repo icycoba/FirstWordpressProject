@@ -39,3 +39,8 @@ function sanitize_header_logo($input){
     $output = $input;
     return $output;
 }
+
+function sanitize_portfolio_icon_count($input){
+    $output = $input;
+    return $output;
+}

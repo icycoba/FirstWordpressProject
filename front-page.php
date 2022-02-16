@@ -4,7 +4,9 @@
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
             <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+                <?php echo nl2br(get_theme_mod('portfolio-title-setting'));?>
+            </h2>
             <!-- Icon Divider-->
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
@@ -21,7 +23,7 @@
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="" />
+                        <img class="img-fluid" src="<?php echo get_theme_mod('portfolio-item-1-image-setting')?>" alt="" />
                     </div>
                 </div>
                 <!-- Portfolio Item 2-->
@@ -32,7 +34,7 @@
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="" />
+                        <img class="img-fluid" src="<?php echo get_theme_mod('portfolio-item-2-image-setting')?>" alt="" />
                     </div>
                 </div>
                 <!-- Portfolio Item 3-->
@@ -43,7 +45,7 @@
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="" />
+                        <img class="img-fluid" src="<?php echo get_theme_mod('portfolio-item-3-image-setting')?>" alt="" />
                     </div>
                 </div>
                 <!-- Portfolio Item 4-->
@@ -54,7 +56,7 @@
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/game.png" alt="" />
+                        <img class="img-fluid" src="<?php echo get_theme_mod('portfolio-item-4-image-setting')?>" alt="" />
                     </div>
                 </div>
                 <!-- Portfolio Item 5-->
@@ -65,7 +67,7 @@
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/safe.png" alt="" />
+                        <img class="img-fluid" src="<?php echo get_theme_mod('portfolio-item-5-image-setting')?>" alt="" />
                     </div>
                 </div>
                 <!-- Portfolio Item 6-->
@@ -76,7 +78,7 @@
                             <div class="portfolio-item-caption-content text-center text-white"><i
                                     class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="" />
+                        <img class="img-fluid" src="<?php echo get_theme_mod('portfolio-item-6-image-setting')?>" alt="" />
                     </div>
                 </div>
             </div>
@@ -147,7 +149,9 @@
                             <div class="col-lg-8">
                                 <!-- Portfolio Modal - Title-->
                                 <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
-                                    id="portfolioModal1Label">Projekt #1</h2>
+                                    id="portfolioModal1Label">
+                                    <?php echo nl2br(get_theme_mod('portfolio-item-1-title-setting'));?>
+                                </h2>
                                 <!-- Icon Divider-->
                                 <div class="divider-custom">
                                     <div class="divider-custom-line"></div>
@@ -155,11 +159,10 @@
                                     <div class="divider-custom-line"></div>
                                 </div>
                                 <!-- Portfolio Modal - Image-->
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="" />
+                                <img class="img-fluid rounded mb-5" src="<?php echo get_theme_mod('portfolio-item-1-image-setting')?>" alt="" />
                                 <!-- Portfolio Modal - Text-->
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
+                                <p class="mb-5">
+                                    <?php echo nl2br(get_theme_mod('portfolio-item-1-text-setting'));?>
                                 </p>
                                 <button class="btn btn-primary" data-dismiss="modal">
                                     <i class="fas fa-times fa-fw"></i>
