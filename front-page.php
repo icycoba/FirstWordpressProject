@@ -1,5 +1,26 @@
 <?php get_template_part('includes/header'); ?>
 
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="<?php echo get_theme_mod('header-logo-setting')?>" alt="PHP" />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">
+                <?php echo nl2br(get_theme_mod('header-title-setting'));?>
+            </h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">
+                <?php echo nl2br(get_theme_mod('header-subtitle-setting'));?>
+            </p>
+        </div>
+    </header>
     <!-- Portfolio Section-->
     <section class="page-section portfolio" id="portfolio">
         <div class="container">
