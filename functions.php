@@ -83,10 +83,15 @@ function firstproject_customize_colors(){
 
     $primaryTextColor = text_color_determine($primaryColor);
     $secondaryTextColor = text_color_determine($tertiaryColor); // Because secondary is header and footer in the original css
+    $tertiaryTextColor = text_color_determine($secondaryColor);
     ?>
     <style type="text/css">
         .text-primary{
             color: <?php echo $primaryTextColor?> !important;
+        }
+
+        .text-headfooter {
+            color: <?php echo $tertiaryTextColor?> !important;
         }
 
         .divider-custom-line {
@@ -97,6 +102,10 @@ function firstproject_customize_colors(){
             color: <?php echo $secondaryTextColor?> !important;
         }
 
+        a.nav-link.active, .navbar-toggler {
+            color: <?php echo $primaryTextColor?> !important;
+        }
+
         .divider-custom.divider-light .divider-custom-icon{
             color: <?php echo $primaryTextColor?> !important;
         }
@@ -105,20 +114,28 @@ function firstproject_customize_colors(){
             background-color: <?php echo $primaryTextColor?> !important;
         }
 
-        .text-secondary{
+        .text-secondary, .form-control{
             color: <?php echo $secondaryTextColor?> !important;
         }
 
-        .bg-primary, .btn-primary, a.nav-link.active {
+        .form-control:focus {
+            color: #495057 !important;
+        }
+
+        .bg-primary, .btn-primary, a.nav-link.active, button.bg-primary:hover, button.bg-primary:focus {
             background-color: <?php echo $primaryColor ?> !important;
             border-color: <?php echo $primaryColor ?> !important;
+        }
+
+        .close {
+            color: <?php echo $primaryColor ?> !important;
         }
 
         .bg-secondary {
             background-color: <?php echo $secondaryColor ?> !important;
         }
 
-        .bg-tertiary {
+        .bg-tertiary, .modal-content {
             background-color: <?php echo $tertiaryColor ?> !important;
         }
 
