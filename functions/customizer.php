@@ -178,6 +178,43 @@ function wp_customizer($wp_customize)
     $wp_customize->add_control('footer-control', array(
 
     ));
+
+    $wp_customize->add_section('colcustomizer-section', array(
+        'title' => 'Barevné schéma',
+        'priority' => 30,
+        'description' => 'Úprava barevného schématu webové stránky'
+    ));
+
+    $wp_customize->add_setting('colcustomizer-primary-setting', array(
+        'default' => '#039be5'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'colcustomizer-primary-control', array(
+        'label' => 'Primární barva stránky',
+        'section' => 'colcustomizer-section',
+        'settings' => 'colcustomizer-primary-setting'
+    )));
+
+    $wp_customize->add_setting('colcustomizer-secondary-setting', array(
+        'default' => '#2c3e50'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'colcustomizer-secondary-control', array(
+        // Secondary because of bg-secondary class of div.
+        'label' => 'Sekundární barva stránky',
+        'section' => 'colcustomizer-section',
+        'settings' => 'colcustomizer-secondary-setting'
+    )));
+
+    $wp_customize->add_setting('colcustomizer-tertiary-setting', array(
+        'default' => '#ffffff'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'colcustomizer-tertiary-control', array(
+        'label' => 'Terciární barva stránky',
+        'section' => 'colcustomizer-section',
+        'settings' => 'colcustomizer-tertiary-setting'
+    )));
 }
 
 add_action('customize_register', 'wp_customizer', 1000);

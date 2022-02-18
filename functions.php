@@ -18,7 +18,7 @@ function firstproject_register_scripts(){
     wp_enqueue_script('firstproject-jquery', "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js", array(), '3.5.1', true);
     wp_enqueue_script('firstproject-bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js", array(), '4.5.3', true);
     wp_enqueue_script('firstproject-jqueryeasing', "https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js", array(), '1.4.1', true);
-    wp_enqueue_script('firstproject-script', get_template_directory_uri() . "js/main.js", array(), $version, true);
+    wp_enqueue_script('firstproject-script', get_template_directory_uri() . "/js/main.js", array(), $version, true);
 }
 
 add_action('wp_enqueue_scripts', 'firstproject_register_scripts');
@@ -71,4 +71,63 @@ function portfolio_default_icon($itemNumber){
             break;
     }
     return $output;
+}
+
+function firstproject_customize_colors(){
+    $primaryColor = get_theme_mod('colcustomizer-primary-setting', '#039be5');
+    $secondaryColor = get_theme_mod('colcustomizer-secondary-setting', '#2c3e50');
+    $tertiaryColor = get_theme_mod('colcustomizer-tertiary-setting', '#ffffff');
+
+    $primaryTextColor = text_color_determine($primaryColor);
+    $secondaryTextColor = text_color_determine($tertiaryColor); // Because secondary is header and footer in the original css
+    ?>
+    <style type="text/css">
+        .text-primary{
+            color: <?php echo $primaryTextColor?> !important;
+        }
+
+        .divider-custom-line {
+            background-color: <?php echo $secondaryTextColor?> !important;
+        }
+
+        .divider-custom-icon {
+            color: <?php echo $secondaryTextColor?> !important;
+        }
+
+        .divider-custom.divider-light .divider-custom-icon{
+            color: <?php echo $primaryTextColor?> !important;
+        }
+
+        .divider-custom.divider-light .divider-custom-line {
+            background-color: <?php echo $primaryTextColor?> !important;
+        }
+
+        .text-secondary{
+            color: <?php echo $secondaryTextColor?> !important;
+        }
+
+        .bg-primary, .btn-primary, a.nav-link.active {
+            background-color: <?php echo $primaryColor ?> !important;
+            border-color: <?php echo $primaryColor ?> !important;
+        }
+
+        .bg-secondary {
+            background-color: <?php echo $secondaryColor ?> !important;
+        }
+
+        .bg-tertiary {
+            background-color: <?php echo $tertiaryColor ?> !important;
+        }
+
+
+    </style>
+    
+    <?php
+    echo text_color_determine(get_theme_mod('colcustomizer-tertiary-setting', '#ffffff'));
+}
+
+add_action('wp_head', 'firstproject_customize_colors');
+
+function text_color_determine($input){
+    return $input > "#7" ? "#2c3e50" : "#ffffff";
 }

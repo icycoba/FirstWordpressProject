@@ -1,7 +1,7 @@
 <?php get_template_part('includes/header'); ?>
 
     <!-- Masthead-->
-    <header class="masthead bg-primary text-white text-center">
+    <header class="masthead bg-primary text-primary text-center">
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Avatar Image-->
             <img class="masthead-avatar mb-5" src="<?php echo get_theme_mod('header-logo-setting')?>" alt="PHP" />
@@ -22,7 +22,7 @@
         </div>
     </header>
     <!-- Portfolio Section-->
-    <section class="page-section portfolio" id="portfolio">
+    <section class="page-section bg-tertiary portfolio" id="portfolio">
         <div class="container">
             <!-- Portfolio Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
@@ -106,10 +106,10 @@
         </div>
     </section>
     <!-- About Section-->
-    <section class="page-section bg-primary text-white mb-0" id="about">
+    <section class="page-section bg-primary text-primary mb-0" id="about">
         <div class="container">
             <!-- About Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-white">O nás</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-primary">O nás</h2>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
@@ -127,7 +127,7 @@
         </div>
     </section>
     <!-- Contact Section-->
-    <section class="page-section" id="contact">
+    <section class="page-section bg-tertiary" id="contact">
         <div class="container">
             <!-- Contact Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Kontaktujte nás</h2>
