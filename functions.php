@@ -102,7 +102,7 @@ function firstproject_customize_colors(){
             color: <?php echo $secondaryTextColor?> !important;
         }
 
-        a.nav-link.active, .navbar-toggler {
+        a.nav-link.active, .navbar-toggler, .btn-primary {
             color: <?php echo $primaryTextColor?> !important;
         }
 

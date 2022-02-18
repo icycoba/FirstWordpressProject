@@ -181,7 +181,7 @@
                                         <!-- Portfolio Modal <?php echo $itemNumber ?> - Image-->
                                         <img class="img-fluid rounded mb-5" src="<?php echo get_theme_mod('portfolio-item-'.$itemNumber.'-image-setting')?>" alt="" />
                                         <!-- Portfolio Modal <?php echo $itemNumber ?> - Text-->
-                                        <p class="mb-5">
+                                        <p class="text-secondary mb-5">
                                             <?php echo nl2br(get_theme_mod('portfolio-item-'.$itemNumber.'-text-setting', 'Stručný nebo dlouhý popis položky.'));?>
                                         </p>
                                         <button class="btn btn-primary" data-dismiss="modal">

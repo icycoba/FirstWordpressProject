@@ -221,6 +221,46 @@ function wp_customizer($wp_customize)
         'section' => 'colcustomizer-section',
         'settings' => 'colcustomizer-tertiary-setting'
     )));
+
+    /*
+    //  Commented in case the automatic text colors don't satisfy the user's customization needs.
+    //  These settings broke the text_color_determine() function and if you selected 'default',
+    //  it didn't work as it should. (Even after adding the function in 'default' variable, which is
+    //  also the reason that it's a set color now.)
+
+    // Primary text color settings
+    $wp_customize->add_setting('colcustomizer-primary-text-setting', array(
+        'default' => '#ffffff'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'colcustomizer-primary-text-control', array(
+        'label' => 'Primární barva textu stránky',
+        'section' => 'colcustomizer-section',
+        'settings' => 'colcustomizer-primary-text-setting'
+    )));
+
+    // Secondary text color settings
+    $wp_customize->add_setting('colcustomizer-secondary-text-setting', array(
+        'default' => '#ffffff'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'colcustomizer-secondary-text-control', array(
+        'label' => 'Sekundární barva textu stránky',
+        'section' => 'colcustomizer-section',
+        'settings' => 'colcustomizer-secondary-text-setting'
+    )));
+
+    // Tertiary text color settings
+    $wp_customize->add_setting('colcustomizer-tertiary-text-setting', array(
+        'default' => '#2c3e50'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'colcustomizer-tertiary-text-control', array(
+        'label' => 'Terciární barva textu stránky',
+        'section' => 'colcustomizer-section',
+        'settings' => 'colcustomizer-tertiary-text-setting'
+    )));
+    */
 }
 
 add_action('customize_register', 'wp_customizer', 1000);
