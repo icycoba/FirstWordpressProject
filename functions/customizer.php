@@ -179,12 +179,16 @@ function wp_customizer($wp_customize)
 
     ));
 
+    //
+    // Color Customization
+    //
     $wp_customize->add_section('colcustomizer-section', array(
         'title' => 'Barevné schéma',
         'priority' => 30,
         'description' => 'Úprava barevného schématu webové stránky'
     ));
 
+    // Primary color settings
     $wp_customize->add_setting('colcustomizer-primary-setting', array(
         'default' => '#039be5'
     ));
@@ -195,6 +199,7 @@ function wp_customizer($wp_customize)
         'settings' => 'colcustomizer-primary-setting'
     )));
 
+    // Secondary color settings
     $wp_customize->add_setting('colcustomizer-secondary-setting', array(
         'default' => '#2c3e50'
     ));
@@ -206,6 +211,7 @@ function wp_customizer($wp_customize)
         'settings' => 'colcustomizer-secondary-setting'
     )));
 
+    // Tertiary color settings
     $wp_customize->add_setting('colcustomizer-tertiary-setting', array(
         'default' => '#ffffff'
     ));

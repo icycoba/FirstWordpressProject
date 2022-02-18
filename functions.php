@@ -1,6 +1,7 @@
 <?php
 // Theme functions
 
+// Style setup
 function firstproject_register_styles(){
     $version = wp_get_theme()->get( 'Version' );
 
@@ -11,6 +12,7 @@ function firstproject_register_styles(){
 
 add_action('wp_enqueue_scripts', 'firstproject_register_styles');
 
+// Javascript setup
 function firstproject_register_scripts(){
     $version = wp_get_theme()->get( 'Version' );
 
@@ -73,6 +75,7 @@ function portfolio_default_icon($itemNumber){
     return $output;
 }
 
+// CSS "injection" so I don't have to edit the original .css files too much
 function firstproject_customize_colors(){
     $primaryColor = get_theme_mod('colcustomizer-primary-setting', '#039be5');
     $secondaryColor = get_theme_mod('colcustomizer-secondary-setting', '#2c3e50');
@@ -128,6 +131,7 @@ function firstproject_customize_colors(){
 
 add_action('wp_head', 'firstproject_customize_colors');
 
+// Determine default color of text for a good contrast
 function text_color_determine($input){
     return $input > "#7" ? "#2c3e50" : "#ffffff";
 }
