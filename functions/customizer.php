@@ -44,6 +44,19 @@ function wp_customizer($wp_customize)
         'height' => 206
     )));
 
+    // Name settings
+    $wp_customize->add_setting('header-name-setting', array(
+        'default' => 'DCSoft',
+        'sanitize_callback' => 'sanitize_header_text'
+    ));
+
+    $wp_customize->add_control('header-name-control', array(
+        'label' => 'Nadpis stránky',
+        'section' => 'header-section',
+        'settings' => 'header-name-setting',
+        'type' => 'textbox'
+    ));
+
     // Title settings
     $wp_customize->add_setting('header-title-setting', array(
         'default' => 'Tvorba webových stránek',
@@ -79,6 +92,7 @@ function wp_customizer($wp_customize)
         'description' => _('Úprava sekce "Portfolio".')
     ));
 
+    /*
     // Title settings
     $wp_customize->add_setting('portfolio-title-setting', array(
         'default' => 'Portfolio',
@@ -91,12 +105,13 @@ function wp_customizer($wp_customize)
         'settings' => 'portfolio-title-setting',
         'type' => 'textarea'
     ));
-    
+    */
+
     // Optimized portfolio modals
     for($itemNumber = 1; $itemNumber <= 6; $itemNumber++){
         // Item Customization
         $wp_customize->add_section('portfolio-section-item-' . $itemNumber, array(
-            'title' => 'Položka ' . $itemNumber,
+            'title' => 'Portfolio / Položka ' . $itemNumber,
             'priority' => 11 + $itemNumber,
             'description' => _('Úprava položky v sekci portfolio.')
         ));
@@ -190,10 +205,10 @@ function wp_customizer($wp_customize)
     ));
 
     $wp_customize->add_control('footer-socials-1-link-control', array(
-        'label' => 'Úprava odkazu na webovou stránku',
+        'label' => 'Úprava odkazu Facebook',
         'section' => 'footer-section',
         'settings' => 'footer-socials-1-link-setting',
-        'type' => 'textarea'
+        'type' => 'textbox'
     ));
 
     $wp_customize->add_setting('footer-socials-2-link-setting', array(
@@ -201,10 +216,10 @@ function wp_customizer($wp_customize)
     ));
 
     $wp_customize->add_control('footer-socials-2-link-control', array(
-        'label' => 'Úprava odkazu na webovou stránku',
+        'label' => 'Úprava odkazu Twitter',
         'section' => 'footer-section',
         'settings' => 'footer-socials-2-link-setting',
-        'type' => 'textarea'
+        'type' => 'textbox'
     ));
 
     $wp_customize->add_setting('footer-socials-3-link-setting', array(
@@ -212,10 +227,10 @@ function wp_customizer($wp_customize)
     ));
 
     $wp_customize->add_control('footer-socials-3-link-control', array(
-        'label' => 'Úprava odkazu na webovou stránku',
+        'label' => 'Úprava odkazu LinkedIn',
         'section' => 'footer-section',
         'settings' => 'footer-socials-3-link-setting',
-        'type' => 'textarea'
+        'type' => 'textbox'
     ));
 
     $wp_customize->add_setting('footer-socials-4-link-setting', array(
@@ -223,10 +238,10 @@ function wp_customizer($wp_customize)
     ));
 
     $wp_customize->add_control('footer-socials-4-link-control', array(
-        'label' => 'Úprava odkazu na webovou stránku',
+        'label' => 'Úprava odkazu Dribbble',
         'section' => 'footer-section',
         'settings' => 'footer-socials-4-link-setting',
-        'type' => 'textarea'
+        'type' => 'textbox'
     ));
 
     $wp_customize->add_setting('footer-link-setting', array(
