@@ -23,7 +23,7 @@ function wp_customizer($wp_customize)
     // Header customization
     //
     $wp_customize->add_section('header-section', array(
-        'title' => 'Hlavička',
+        'title' => 'Úprava Hlavičky',
         'priority' => 10,
         'description' => _('Úprava horní sekce stránky.')
     ));
@@ -168,15 +168,77 @@ function wp_customizer($wp_customize)
     // Footer customization
     //
     $wp_customize->add_section('footer-section', array(
-
+        'title' => 'Úprava patičky',
+        'description' => _('Úprava spodní části stránky.'),
+        'priority' => 19
     ));
 
-    $wp_customize->add_setting('footer-settings', array(
-
+    $wp_customize->add_setting('footer-address-setting', array(
+        'default' => 'Ulice 123/45
+        616 00 Brno'
     ));
 
-    $wp_customize->add_control('footer-control', array(
+    $wp_customize->add_control('footer-address-control', array(
+        'label' => 'Úprava adresy',
+        'section' => 'footer-section',
+        'settings' => 'footer-address-setting',
+        'type' => 'textarea'
+    ));
 
+    $wp_customize->add_setting('footer-socials-1-link-setting', array(
+        'default' => '#!'
+    ));
+
+    $wp_customize->add_control('footer-socials-1-link-control', array(
+        'label' => 'Úprava odkazu na webovou stránku',
+        'section' => 'footer-section',
+        'settings' => 'footer-socials-1-link-setting',
+        'type' => 'textarea'
+    ));
+
+    $wp_customize->add_setting('footer-socials-2-link-setting', array(
+        'default' => '#!'
+    ));
+
+    $wp_customize->add_control('footer-socials-2-link-control', array(
+        'label' => 'Úprava odkazu na webovou stránku',
+        'section' => 'footer-section',
+        'settings' => 'footer-socials-2-link-setting',
+        'type' => 'textarea'
+    ));
+
+    $wp_customize->add_setting('footer-socials-3-link-setting', array(
+        'default' => '#!'
+    ));
+
+    $wp_customize->add_control('footer-socials-3-link-control', array(
+        'label' => 'Úprava odkazu na webovou stránku',
+        'section' => 'footer-section',
+        'settings' => 'footer-socials-3-link-setting',
+        'type' => 'textarea'
+    ));
+
+    $wp_customize->add_setting('footer-socials-4-link-setting', array(
+        'default' => '#!'
+    ));
+
+    $wp_customize->add_control('footer-socials-4-link-control', array(
+        'label' => 'Úprava odkazu na webovou stránku',
+        'section' => 'footer-section',
+        'settings' => 'footer-socials-4-link-setting',
+        'type' => 'textarea'
+    ));
+
+    $wp_customize->add_setting('footer-link-setting', array(
+        'default' => 'Více informací naleznete na
+        <a href="https://dcsoft.cz/">dcsoft.cz</a>'
+    ));
+
+    $wp_customize->add_control('footer-link-control', array(
+        'label' => 'Úprava obecného odkazu',
+        'section' => 'footer-section',
+        'settings' => 'footer-link-setting',
+        'type' => 'textarea'
     ));
 
     //

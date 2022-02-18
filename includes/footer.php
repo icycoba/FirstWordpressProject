@@ -5,25 +5,24 @@
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase text-headfooter mb-4">Adresa</h4>
                 <p class="lead text-headfooter mb-0">
-                    Ulice 123/45
-                    <br />
-                    616 00 Brno
+                <?php echo nl2br(get_theme_mod('footer-address-setting', 'Ulice 123/45
+        616 00 Brno'));?>
                 </p>
             </div>
             <!-- Footer Social Icons-->
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase text-headfooter mb-4">Sociální sítě</h4>
-                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="<?php echo (get_theme_mod('footer-socials-1-link-setting', '#!'));?>"><i class="fab fa-fw fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="<?php echo (get_theme_mod('footer-socials-2-link-setting', '#!'));?>"><i class="fab fa-fw fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="<?php echo (get_theme_mod('footer-socials-3-link-setting', '#!'));?>"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="<?php echo (get_theme_mod('footer-socials-4-link-setting', '#!'));?>"><i class="fab fa-fw fa-dribbble"></i></a>
             </div>
             <!-- Footer About Text-->
             <div class="col-lg-4">
                 <h4 class="text-uppercase text-headfooter mb-4">Odkazy</h4>
                 <p class="lead text-headfooter mb-0">
-                    Více informací naleznete na
-                    <a href="https://dcsoft.cz/">dcsoft.cz</a>
+                    <?php echo nl2br(get_theme_mod('footer-link-setting', 'Ulice 123/45
+        616 00 Brno'));?>
                 </p>
             </div>
         </div>
