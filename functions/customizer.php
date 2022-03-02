@@ -217,7 +217,7 @@ function wp_customizer($wp_customize)
     $wp_customize->add_section('general-section', array(
         'title' => 'Obecné',
         'priority' => 20,
-        'description' => 'Úprava barevného schématu webové stránky'
+        'description' => 'Úprava nadpisů sekcí'
     ));
 
     $wp_customize->add_setting('general-section-1-setting', array(
