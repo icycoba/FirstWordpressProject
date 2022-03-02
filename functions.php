@@ -37,15 +37,6 @@ function sanitize_header_text($input){
     return preg_replace('/\x00|<[^>]*>?/', '', $input);
 }
 
-function sanitize_header_logo($input){
-    $output = $input;
-    return $output;
-}
-
-function sanitize_portfolio_icon_count($input){
-    $output = $input;
-    return $output;
-}
 
 // Simple switch-case to determine which default icon is supposed to be used
 function portfolio_default_icon($itemNumber){
