@@ -4,10 +4,10 @@
     <header class="masthead bg-primary text-primary text-center">
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Avatar Image-->
-            <img class="masthead-avatar mb-5" src="<?php echo get_theme_mod('header-logo-setting')?>" alt="PHP" />
+            <img class="masthead-avatar mb-5" src="<?php echo get_theme_mod('header-logo-setting', get_template_directory_uri() . '/assets/img/logo.png')?>" alt="PHP" />
             <!-- Masthead Heading-->
             <h1 class="masthead-heading text-uppercase mb-0">
-                <?php echo nl2br(get_theme_mod('header-title-setting'));?>
+                <?php echo nl2br(get_theme_mod('header-title-setting', 'Tvorba webových stránek'));?>
             </h1>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
@@ -17,7 +17,7 @@
             </div>
             <!-- Masthead Subheading-->
             <p class="masthead-subheading font-weight-light mb-0">
-                <?php echo nl2br(get_theme_mod('header-subtitle-setting'));?>
+                <?php echo nl2br(get_theme_mod('header-subtitle-setting', 'Nette - Symfony - Laravel'));?>
             </p>
         </div>
     </header>
