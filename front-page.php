@@ -26,7 +26,7 @@
         <div class="container">
             <!-- Portfolio Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-                <?php echo nl2br(get_theme_mod('portfolio-title-setting'));?>
+                <?php echo nl2br(get_theme_mod('general-section-1-setting', 'Portfolio'));?>
             </h2>
             <!-- Icon Divider-->
             <div class="divider-custom">
@@ -66,7 +66,9 @@
     <section class="page-section bg-primary text-primary mb-0" id="about">
         <div class="container">
             <!-- About Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-primary">O nás</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-primary">
+            <?php echo nl2br(get_theme_mod('general-section-2-setting', 'O nás'));?>
+            </h2>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
@@ -87,7 +89,9 @@
     <section class="page-section bg-tertiary" id="contact">
         <div class="container">
             <!-- Contact Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Kontaktujte nás</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+                <?php echo nl2br(get_theme_mod('general-section-3-setting', 'Kontaktujte nás'));?>
+            </h2>
             <!-- Icon Divider-->
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>

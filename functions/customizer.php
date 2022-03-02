@@ -23,8 +23,8 @@ function wp_customizer($wp_customize)
     // Header customization
     //
     $wp_customize->add_section('header-section', array(
-        'title' => 'Úprava Hlavičky',
-        'priority' => 10,
+        'title' => 'Hlavička',
+        'priority' => 21,
         'description' => _('Úprava horní sekce stránky.')
     ));
 
@@ -88,7 +88,7 @@ function wp_customizer($wp_customize)
     //
     $wp_customize->add_section('portfolio-section', array(
         'title' => 'Portfolio',
-        'priority' => 11,
+        'priority' => 22,
         'description' => _('Úprava sekce "Portfolio".')
     ));
 
@@ -165,7 +165,7 @@ function wp_customizer($wp_customize)
     //
     $wp_customize->add_section('about-section', array(
         'title' => 'O nás',
-        'priority' => 18,
+        'priority' => 23,
         'description' => _('Úprava sekce "O nás".')
     ));
 
@@ -185,9 +185,9 @@ function wp_customizer($wp_customize)
     // Footer customization
     //
     $wp_customize->add_section('footer-section', array(
-        'title' => 'Úprava patičky',
+        'title' => 'Patička',
         'description' => _('Úprava spodní části stránky.'),
-        'priority' => 19
+        'priority' => 24
     ));
 
     $wp_customize->add_setting('footer-address-setting', array(
@@ -300,6 +300,42 @@ function wp_customizer($wp_customize)
         'section' => 'colcustomizer-section',
         'settings' => 'colcustomizer-tertiary-setting'
     )));
+
+    $wp_customize->add_section('general-section', array(
+        'title' => 'Obecné',
+        'priority' => 20,
+        'description' => 'Úprava barevného schématu webové stránky'
+    ));
+
+    $wp_customize->add_setting('general-section-1-setting', array(
+        'default' => 'Portfolio'
+    ));
+
+    $wp_customize->add_control('general-section-1-control', array(
+        'label' => 'Nadpis sekce 1',
+        'section' => 'general-section',
+        'settings' => 'general-section-1-setting'
+    ));
+
+    $wp_customize->add_setting('general-section-2-setting', array(
+        'default' => 'O nás'
+    ));
+
+    $wp_customize->add_control('general-section-2-control', array(
+        'label' => 'Nadpis sekce 2',
+        'section' => 'general-section',
+        'settings' => 'general-section-2-setting'
+    ));
+
+    $wp_customize->add_setting('general-section-3-setting', array(
+        'default' => 'Kontaktujte nás'
+    ));
+
+    $wp_customize->add_control('general-section-3-control', array(
+        'label' => 'Nadpis sekce 3',
+        'section' => 'general-section',
+        'settings' => 'general-section-3-setting'
+    ));
 
     /*
     //  Commented in case the automatic text colors don't satisfy the user's customization needs.
