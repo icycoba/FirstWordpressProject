@@ -203,7 +203,7 @@ function wp_customizer($wp_customize)
     ));
 
     $wp_customize->add_setting('footer-socials-1-link-setting', array(
-        'default' => '#!'
+        'default' => ''
     ));
 
     $wp_customize->add_control('footer-socials-1-link-control', array(
@@ -214,7 +214,7 @@ function wp_customizer($wp_customize)
     ));
 
     $wp_customize->add_setting('footer-socials-2-link-setting', array(
-        'default' => '#!'
+        'default' => ''
     ));
 
     $wp_customize->add_control('footer-socials-2-link-control', array(
@@ -225,7 +225,7 @@ function wp_customizer($wp_customize)
     ));
 
     $wp_customize->add_setting('footer-socials-3-link-setting', array(
-        'default' => '#!'
+        'default' => ''
     ));
 
     $wp_customize->add_control('footer-socials-3-link-control', array(
@@ -236,7 +236,7 @@ function wp_customizer($wp_customize)
     ));
 
     $wp_customize->add_setting('footer-socials-4-link-setting', array(
-        'default' => '#!'
+        'default' => ''
     ));
 
     $wp_customize->add_control('footer-socials-4-link-control', array(

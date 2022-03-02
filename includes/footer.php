@@ -11,11 +11,19 @@
             </div>
             <!-- Footer Social Icons-->
             <div class="col-lg-4 mb-5 mb-lg-0">
-                <h4 class="text-uppercase text-headfooter mb-4">Sociální sítě</h4>
-                <a class="btn btn-outline-light btn-social mx-1" href="<?php echo (get_theme_mod('footer-socials-1-link-setting', '#!'));?>"><i class="fab fa-fw fa-facebook-f"></i></a>
-                <a class="btn btn-outline-light btn-social mx-1" href="<?php echo (get_theme_mod('footer-socials-2-link-setting', '#!'));?>"><i class="fab fa-fw fa-twitter"></i></a>
-                <a class="btn btn-outline-light btn-social mx-1" href="<?php echo (get_theme_mod('footer-socials-3-link-setting', '#!'));?>"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                <a class="btn btn-outline-light btn-social mx-1" href="<?php echo (get_theme_mod('footer-socials-4-link-setting', '#!'));?>"><i class="fab fa-fw fa-dribbble"></i></a>
+                <?php
+                $facebookLink = get_theme_mod('footer-socials-1-link-setting', '');
+                $twitterLink = get_theme_mod('footer-socials-2-link-setting', '');
+                $linkedinLink = get_theme_mod('footer-socials-3-link-setting', '');
+                $dribbbleLink = get_theme_mod('footer-socials-4-link-setting', '');
+                ?>
+
+                <?php if ($facebookLink !== '' || $twitterLink !== '' || $linkedinLink !== '' || $dribbbleLink !== '') { ?><h4 class="text-uppercase text-headfooter mb-4">Sociální sítě</h4> <?php } ?>
+                
+                <?php if ($facebookLink !== ''){ ?><a class="btn btn-outline-light btn-social mx-1" href="<?php echo $facebookLink; ?>"><i class="fab fa-fw fa-facebook-f"></i></a> <?php } ?>
+                <?php if ($twitterLink !== ''){ ?><a class="btn btn-outline-light btn-social mx-1" href="<?php echo $twitterLink; ?>"><i class="fab fa-fw fa-twitter"></i></a> <?php } ?>
+                <?php if ($linkedinLink !== ''){ ?><a class="btn btn-outline-light btn-social mx-1" href="<?php echo $linkedinLink; ?>"><i class="fab fa-fw fa-linkedin-in"></i></a> <?php } ?>
+                <?php if ($dribbbleLink !== ''){ ?><a class="btn btn-outline-light btn-social mx-1" href="<?php echo $dribbbleLink; ?>"><i class="fab fa-fw fa-dribbble"></i></a> <?php } ?>
             </div>
             <!-- Footer About Text-->
             <div class="col-lg-4">
