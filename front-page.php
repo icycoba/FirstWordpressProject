@@ -37,6 +37,7 @@
             <!-- Portfolio Grid Items-->
             <div class="row justify-content-center">
                 <!-- Portfolio Item 1-->
+                <!--
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
                         <div
@@ -47,7 +48,9 @@
                         <img class="img-fluid" src="<?php echo get_theme_mod('portfolio-item-1-image-setting')?>" alt="" />
                     </div>
                 </div>
+                -->
                 <!-- Portfolio Item 2-->
+                <!--
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
                         <div
@@ -58,7 +61,9 @@
                         <img class="img-fluid" src="<?php echo get_theme_mod('portfolio-item-2-image-setting')?>" alt="" />
                     </div>
                 </div>
+                -->
                 <!-- Portfolio Item 3-->
+                <!--
                 <div class="col-md-6 col-lg-4 mb-5">
                     <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
                         <div
@@ -69,7 +74,9 @@
                         <img class="img-fluid" src="<?php echo get_theme_mod('portfolio-item-3-image-setting')?>" alt="" />
                     </div>
                 </div>
+                -->
                 <!-- Portfolio Item 4-->
+                <!--
                 <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
                     <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
                         <div
@@ -80,7 +87,9 @@
                         <img class="img-fluid" src="<?php echo get_theme_mod('portfolio-item-4-image-setting')?>" alt="" />
                     </div>
                 </div>
+                -->
                 <!-- Portfolio Item 5-->
+                <!--
                 <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
                     <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
                         <div
@@ -91,7 +100,9 @@
                         <img class="img-fluid" src="<?php echo get_theme_mod('portfolio-item-5-image-setting')?>" alt="" />
                     </div>
                 </div>
+                -->
                 <!-- Portfolio Item 6-->
+                <!--
                 <div class="col-md-6 col-lg-4">
                     <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
                         <div
@@ -102,6 +113,29 @@
                         <img class="img-fluid" src="<?php echo get_theme_mod('portfolio-item-6-image-setting')?>" alt="" />
                     </div>
                 </div>
+                -->
+                    <?php
+                    global $post;
+                    $args = array('numberposts' => '-1', 'category_name' => 'portfolio',);
+                    $lastposts = get_posts($args);
+                    foreach ($lastposts as $post) :
+                        setup_postdata($post);
+                    ?>
+                        <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal<?php the_ID(); ?>">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white">
+                                    <i class="fas fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid']); ?>
+                        </div>
+                        </div>
+                    <?php
+                    endforeach;
+                    wp_reset_postdata();
+                    ?>
+                
             </div>
         </div>
     </section>
@@ -152,12 +186,13 @@
         </div>
     </section>
     <!-- Portfolio Modals-->
-    <!-- Portfolio Modal Generator (1 through 6)-->
+    <!-- Portfolio Modal Generator -->
     <?php
-        for($itemNumber = 1; $itemNumber <= 6; $itemNumber++){
+        foreach ($lastposts as $post) :
+            setup_postdata($post);
     ?>
-            <div class="portfolio-modal modal fade" id="portfolioModal<?php echo $itemNumber?>" tabindex="-1" role="dialog"
-                aria-labelledby="portfolioModal<?php echo $itemNumber?>Label" aria-hidden="true">
+            <div class="portfolio-modal modal fade" id="portfolioModal<?php the_ID(); ?>" tabindex="-1" role="dialog"
+                aria-labelledby="portfolioModal<?php the_ID(); ?>Label" aria-hidden="true">
                 <div class="modal-dialog modal-xl" role="document">
                     <div class="modal-content">
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
@@ -167,10 +202,10 @@
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-8">
-                                        <!-- Portfolio Modal <?php echo $itemNumber ?> - Title-->
+                                        <!-- Portfolio Modal <?php the_ID(); ?> - Title-->
                                         <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
-                                            id="portfolioModal<?php echo $itemNumber?>Label">
-                                            <?php echo nl2br(get_theme_mod('portfolio-item-'.$itemNumber.'-title-setting', 'Projekt #'.$itemNumber));?>
+                                            id="portfolioModal<?php the_ID(); ?>Label">
+                                            <?php the_title();?>
                                         </h2>
                                         <!-- Icon Divider-->
                                         <div class="divider-custom">
@@ -178,12 +213,12 @@
                                             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                             <div class="divider-custom-line"></div>
                                         </div>
-                                        <!-- Portfolio Modal <?php echo $itemNumber ?> - Image-->
-                                        <img class="img-fluid rounded mb-5" src="<?php echo get_theme_mod('portfolio-item-'.$itemNumber.'-image-setting')?>" alt="" />
-                                        <!-- Portfolio Modal <?php echo $itemNumber ?> - Text-->
-                                        <p class="text-secondary mb-5">
-                                            <?php echo nl2br(get_theme_mod('portfolio-item-'.$itemNumber.'-text-setting', 'Stručný nebo dlouhý popis položky.'));?>
-                                        </p>
+                                        <!-- Portfolio Modal <?php the_ID(); ?> - Image-->
+                                        <?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid rounded mb-5']); ?>
+                                        <!-- Portfolio Modal <?php the_ID(); ?> - Text-->
+                                        <div class="text-secondary mb-5">
+                                            <?php the_content(['class' => 'text-secondary mb-5']); ?>
+                                        </div>
                                         <button class="btn btn-primary" data-dismiss="modal">
                                             <i class="fas fa-times fa-fw"></i>
                                             Close Window
@@ -196,7 +231,8 @@
                 </div>
             </div>
     <?php
-        }
+        endforeach;
+        wp_reset_postdata();
     ?>
 </body>
 

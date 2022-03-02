@@ -108,6 +108,7 @@ function wp_customizer($wp_customize)
     */
 
     // Optimized portfolio modals
+    /*
     for($itemNumber = 1; $itemNumber <= 6; $itemNumber++){
         // Item Customization
         $wp_customize->add_section('portfolio-section-item-' . $itemNumber, array(
@@ -157,6 +158,7 @@ function wp_customizer($wp_customize)
             'type' => 'textarea'
         ));
     }
+    */
 
     //
     // About section customization
